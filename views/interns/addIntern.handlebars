@@ -1,0 +1,27 @@
+{{#errors}}
+  <div class="alert alert-danger my-2">{{text}}</div>
+{{else}}
+
+{{/errors}}
+  <div class="card card-body border-primary mt-3">
+    <h3 class="text-center text-primary text-uppercase m-4">Add Intern</h3>
+    <div class="row d-flex justify-content-between mb-4">
+    <p class="col-6 text-center"><a href="/interns"><span class="mr-1">&euro; Recharge Interns</span></a></p>
+    <p class="col-6 text-center"><a href="/others"><span class="mr-1">&dollar; Recharge Others</span></a></p>
+  </div>
+  <form action="/interns" method="post">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input class="form-control" type="text" name="name">
+    </div>
+    <div class="form-group">
+      <label for="track">Track</label>
+      <input type="text" class="form-control" name="track">
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="phone" class="form-control" name="phone">
+    </div>
+    <button class="btn btn-primary text-uppercase d-block mx-auto mt-4 py-2 w-50" type="submit">Add intern</button>
+  </form>
+</div>
