@@ -1,0 +1,31 @@
+<h1 class="text-center text-primary text-uppercase text-primary m-4">Interns</h1>
+<div class="row d-flex justify-content-between mb-4">
+  <p class="col-6 text-center"><a href="/interns/addIntern"><span class="mr-1">&plus; Add intern</span></a></p>
+  <p class="col-6 text-center"><a href="/others"><span class="mr-1">&dollar; Recharge others</span></a></p>
+</div>
+<div class="container">
+  <div class="row d-flex justify-content-around  mx-auto mx-md-auto">
+    {{#internsProfile}}
+      <div class="card border-secondary text-center col-12 col-md-5 col-lg-4 col-lg-3 col-xl-3 px-0 mx-xl-1 mb-5">
+        <div class="card-header bg-light text-secondary mx-0">
+          <h4 class="text-uppercase font-weight-light">{{name}}</h4>
+        </div>
+        <div class="card-header bg-light text-secondary mx-0">
+          <h5>{{track}}</h5>
+        </div>
+        <div class="card-body bg-light text-secondary">
+          <p>{{phone}}</p>
+        </div>
+        <div class="d-flex justify-content-between">
+          <a class="btn border text-primary w-50" href="interns/edit/{{id}}">EDIT</a>
+          <a class="btn border text-success w-50" href="interns/recharge/{{id}}">RECHARGE</a>
+          <form class="border w-50" action="/delete/{{id}}" method="post">
+            <input class="btn border-0 bg-white text-danger w-100" type="submit"  value="DELETE">
+          </form>
+        </div>
+      </div>
+    {{else}}
+      <p>No intern found. <a href="interns/addIntern">Click to add intern(s) <span class="font-weight-bold">&plus;</span></a></p>
+    {{/internsProfile}}
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="card card-body border-primary mt-3">
+  {{#each internProfile}}
+    <h5 class="text-center text-primary text-uppercase m-4">Recharge <small class="text-warning ">{{name}}</small></h5>
+  {{/each}}
+  <div class="row d-flex justify-content-between mb-4">
+    <p class="col-6 text-center"><a href="/"><span class="mr-1">&LeftArrow;Home</span></a></p>
+    <p class="col-6 text-center"><a href="/others"><span class="mr-1">&dollar; Recharge Others</span></a></p>
+  </div>
+  <form class="mt-3" action="/recharge_intern" method="post">
+    <div class="form-group">
+      <label for="code">NETWORK PROVIDER</label>
+      <select class="form-control" type="text" name="code">
+        {{#each networks}}
+          <option>{{Code}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="amount">AMOUNT</label>
+      <input type="number" class="form-control" name="amount" min="50" required>
+    </div>
+    <div class="form-group">
+      <label for="phone">PHONE</label>
+      {{#each internProfile}}
+        <input type="phone" class="form-control" name="phone" value="{{phone}}" readonly>
+      {{/each}}
+    </div>
+    <button class="btn btn-primary d-block mx-auto mt-4 py-2 w-50" type="submit">RECHARGE</button>
+  </form>
+</div>
